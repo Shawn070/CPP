@@ -34,7 +34,7 @@ public:
 	Line(Line &l);
 	double getLen() { return len; }
 private:
-	Point p1, p2;		//Point类的对象p1, p2
+	Point p1, p2;					//Point类的对象p1, p2
 	double len;
 };
 

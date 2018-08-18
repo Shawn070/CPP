@@ -21,7 +21,7 @@ void Clock::setTime(int newH, int newM, int newS) {
 	second = newS;
 }
 
-inline void Clock::showTime() {
+inline void Clock::showTime() {	// ÄÚÁªº¯Êý
 	cout << hour << ":" << minute << ":" << second << endl;
 }
 

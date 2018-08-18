@@ -1,5 +1,6 @@
 // 3_17(cmath).cpp : 定义控制台应用程序的入口点。
 //
+// 求sinx，cosx， tanx
 
 #include "stdafx.h"
 #include <iostream>

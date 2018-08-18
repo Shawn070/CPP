@@ -1,5 +1,6 @@
 // 3_14(inline).cpp : 定义控制台应用程序的入口点。
 //
+// inline -- 编译时直接将代码段插入程序，适用于较短的插入代码
 
 #include "stdafx.h"
 #include <iostream>

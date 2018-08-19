@@ -1,7 +1,7 @@
 // 4_6_2(联合体).cpp : 定义控制台应用程序的入口点。
 // 使用联合体保存成绩信息，并输出。
 
-#include "stdafx.h"
+// #include "stdafx.h"
 #include <iostream>
 #include <string>
 using namespace std;

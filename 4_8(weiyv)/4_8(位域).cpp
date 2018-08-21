@@ -1,4 +1,12 @@
+// 位域
+// 数据类型说明符 成员名:位数
 //
+// 冒号后的位数用来指定一个位域所占用的二进制位数。
+// 只有bool, char, int enum的成员才能够被定义为位域。
+//
+// 设计一个结构体存储预约的成绩信息，需要包括学号、年级和成绩3项
+// 内容，学号的范围是0~99 999 999，年级分为freshman, sophomore, 
+// junior, senior四种，成绩包括A, B, C ,D四个等级。
 
 # include<iostream>
 using namespace std;

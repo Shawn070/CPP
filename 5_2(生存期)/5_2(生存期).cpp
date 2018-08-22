@@ -4,10 +4,10 @@ using namespace std;
 int i = 1;
 
 void other(){
-	//a, b 
+	//a, b微静态局部变量，旅游全局寿命，局部可见，只第一次进入函数时被初始化 
 	static int a = 2;
 	static int b;
-	//c
+	//c为局部变量，旅游动态生存期，每次进入函数时都初始化
 	int c = 10;
 	a += 2;
 	i += 32;
@@ -18,9 +18,9 @@ void other(){
 }
 
 int main(){
-	//a
+	//a为静态局部变量，旅游全局寿命，局部可见
 	static int a;
-	//b, c
+	//b, c为局部变量，具有动态生存期
 	int b = -10;
 	int c = 0;
 	

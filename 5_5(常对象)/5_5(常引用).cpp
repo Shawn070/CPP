@@ -27,7 +27,7 @@ int main(){
 	cout << dist(myp1, myp2) << endl;
 	return 0;
 }
-
+ 
 /* output:
 The distance is : 5
 */

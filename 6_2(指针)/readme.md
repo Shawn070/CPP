@@ -44,7 +44,6 @@ for (int i=0; i<3; i++){
 		cout << *(*(array2+i)+j) << " ";	
 	cout << endl;
 }
-
 ```
 
 

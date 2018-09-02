@@ -63,11 +63,90 @@ splitFloat(x, &n, &f);
 ## 6.2.10 指向函数的指针
 函数名代表数函数代码起始地址的同时，也包括函数返回值类型和参数的个数、类型、排列次序等信息。
 ``` c++
-数据类型 (*函数指针名)(形参表)
+数据类型 ( *函数指针名)(形参表)
 
-typedef int(*DoubleIntFunction)(double);
+typedef int( *DoubleIntFunction)(double);
 DoubleIntFunction funcPtr;
 ```
+## 6.2.11 对象指针
+### 1.对象指针的一般概念
+语法形式：
+对象指针名->成员名	等价于*对象指针名	.成员名
+``` c++
+Point a(4, 5);
+POint *p1=&a;
+cout << p1->getX() << endl;
+cout << a.getX() << endl;
+```
+前向引用声明：
+``` c++
+class Fred;		// 前向引用声明
+class Barney{
+	Fred x;		// 错误：类Fred的定义尚不完善
+	fred *x;	// 正确
+};
+class Fred{
+	Barney y;
+};
+```
+### 2.this指针
+一个隐含于每一个类的非静态成员函数中的特殊指针（）包括构造函数和析构函数，用于指向正在被成员函数操作的对象。
+``` c++
+return x;
+等价于
+return this->x;
+```
+### 3.指向类的非静态成员的指针
+类型说明符 类名::*指针名；		// 声明指向数据成员的指针
+类型说明符 (类名:*指针名)（参数表）；		// 声明指向函数成员的指针
+
+指针名=&类名：数据成员名；		// 对数据成员指针赋值
+>在指针中存放该数据成员在类中的相对位置（即相对于起始地址的地址偏移量）
+``` c++
+// 6-13
+// 访问对象的公有成员的不同方式
+int main(){
+	Point a(4, 5);
+	Point *p1=&a;
+	int (Point::*funcPtr)() const=&Point::getX();
+
+	cout << a.getX() << endl;		// 使用对象名访问成员函数
+	cout p1->getx() << endl;		// 使用对象指针访问成员函数
+	cout << (a.*funcPtr)() << endl;	// 成员函数和对象名
+	cout << (p1->*funcPtr)() << endl;	// 成员函数指针和对象指针
+
+	return 0;
+}
+```
+### 4.指向类的静态成员的指针
+``` c++
+int *ptr = &Point::coutn;
+void ( *funcPtr)() = Point::showCount;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

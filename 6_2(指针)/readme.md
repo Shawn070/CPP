@@ -121,7 +121,10 @@ int main(){
 ### 4.指向类的静态成员的指针
 ``` c++
 int *ptr = &Point::coutn;
+cout << "object count=" << *ptr << endl;
+
 void ( *funcPtr)() = Point::showCount;
+funcPtr();
 ```
 
 

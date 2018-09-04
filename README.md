@@ -1,6 +1,6 @@
 # This repository is my CPP workplace.
-detials:![cppreference](https://zh.cppreference.com/w/cpp/)
-markdown:![mdreference](https://www.jianshu.com/p/191d1e21f7ed)
+detials:[cppreference](https://zh.cppreference.com/w/cpp/)
+markdown:[mdreference](https://www.jianshu.com/p/191d1e21f7ed)
 
 ## How to use g++:
 Compile one cpp file:

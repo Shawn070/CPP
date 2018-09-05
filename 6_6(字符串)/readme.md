@@ -9,11 +9,11 @@ cout << STRING1;
 #include<cstring>
 char str[8] = {'p', 'r', 'o', 'g', 'r', 'a', 'm', '\0'};
 char str[8] = "program";
-char str[]  = "program":
+char str[]  = "program";
 ```
->strcpy: 复制字符串
->strmap: 按辞典顺序比较大小
->strcat: 将两个字符串连接起来
+>strcpy: 复制字符串(/br)
+>strmap: 按辞典顺序比较大小(/br)
+>strcat: 将两个字符串连接起来(/br)
 >当字符串的。长度很不确定时，需要用new来动态创建字符数组，最后还要用delete释放
 
 # 2.string类
@@ -29,7 +29,7 @@ string(const char *s, unsigned int n);
 string(unsigned int n, char c);
 // 将参数c中的字符重复n次，用来初始化string类的对象
 
-string str="Hello World!":
+string str="Hello World!";
 ```
 
 2. 常用成员函数功能介绍
@@ -42,7 +42,7 @@ string & insert(unsigned int p0, const char *s);
 // 将s所指向的字符串插入在本串中位置p0之前
 string substr(unsigned int pos, unsigned int n) const;
 // 取子串，取本串中位置pos开始的n个字符串，构成新的string类对象作为返回值
-unsigned int find(const basic_string &str) const:
+unsigned int find(const basic_string &str) const;
 // 查找并返回str在本串中第一次出现的位置
 unsigned int length() const;
 // 返回串的长度(字符个数)

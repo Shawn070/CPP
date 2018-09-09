@@ -1,0 +1,69 @@
+// 7_6.cpp
+#include<iostream>
+using namespace std;
+class Base1{
+public:
+	int var;
+	void fun(){cout<<"Member of Base1, var="<<var<<endl;}
+};
+
+class Base2{
+public:
+	int var;
+	void fun(){cout<<"Memberof Base2, var="<<var<<endl;}
+};
+
+class Derived: public Base1, public Base2{
+public:
+	int var;
+	void fun(){cout<<"Member of Derived, var="<<var<<endl;}
+};
+
+
+int main(){
+	Derived d;
+	Derived *p = &d;
+
+	d.var=1;
+	d.fun();
+
+	d.Base1::var=2;
+	d.Base1::fun();
+
+	p->Base2::var=3;
+	p->Base2::fun();
+
+	return 0;
+}
+
+/* output:
+Member of Derived, var=1
+Member of Base1, var=2
+Memberof Base2, var=3
+*/
+
+/*
+presume: no var and fun() in Derived
+
+d.var=1;	// error
+d.fun();	// error
+
+solution:
+class Derived: public Base1, public Base2{
+public:
+	using Base1::var;
+	using Base2::fun;
+
+fix: using fun
+class Derived2: public Base1{
+public:
+	using Base1::fun;
+	void fun(int i){...}
+};
+
+};
+
+ */
+
+
+

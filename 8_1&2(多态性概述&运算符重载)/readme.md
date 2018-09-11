@@ -21,9 +21,9 @@
 }
 ```
 ## 2.2 运算符重载为成员函数
-1. 双目运算符B: `*oprd1 B oprd2*`, 把B重载为A类的成员函数，该函数只有一个形参，类型是oprd2所属的类型, oprd1为A类的对象。oprd1 B oprd2相当于函数调用oprd1.operator B(oprd2)。
-2. 前置单目运算符U(如“-”): `*U oprd*`, oprd为A类的对象，U重载为A类的成员函数，没有形参。相当于调用oprd.operator U()。
-3. 后置运算符“++”和“--”: `*oprd++*`或`*oprd--*` ，oprd为A类的成员函数，宾利在。重载为A类的成员函数，这是函数要带一个整数(int形参)。相当于函数调用oprd.oerator++(0) 和oprd.operator--(0)。
+1. 双目运算符B: *`oprd1 B oprd2`*, 把B重载为A类的成员函数，该函数只有一个形参，类型是oprd2所属的类型, oprd1为A类的对象。oprd1 B oprd2相当于函数调用oprd1.operator B(oprd2)。
+2. 前置单目运算符U(如“-”): *`U oprd`*, oprd为A类的对象，U重载为A类的成员函数，没有形参。相当于调用oprd.operator U()。
+3. 后置运算符“++”和“--”: *`oprd++`*或*`oprd--`* ，oprd为A类的成员函数，宾利在。重载为A类的成员函数，这是函数要带一个整数(int形参)。相当于函数调用oprd.oerator++(0) 和oprd.operator--(0)。
 
 
 

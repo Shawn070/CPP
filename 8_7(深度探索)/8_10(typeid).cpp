@@ -31,6 +31,7 @@ int main(){
 	return 0;
 }
 
+// 虽然ｂ是指向多态类型的指针，但指针类型本身不是多态类型
 /*
 typeid(b): P4Base
 typeid(*b): 4Base

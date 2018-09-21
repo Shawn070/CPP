@@ -45,3 +45,18 @@ w					# list all the wins
 %					# horizontally segment
 "					# vertically segment
 ```
+
+## code with VSCode:
+1. add extension: Code Runner
+2. add in User Settings:
+``` json
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"    // use cmd instead of powershell
+    "code-runner.runInTerminal": true, //在内置终端运行
+
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && \"$fileNameWithoutExt.exe\"",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && \"$fileNameWithoutExt.exe\"",
+        //"cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    }
+```
+>powershell不支持中文路径，因此替换为cmd；MinGW配置gdb太麻烦。

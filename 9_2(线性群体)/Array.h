@@ -1,5 +1,5 @@
 //Array.h
-//数组类模版Array
+//动态数组类模版Array
 
 #ifndef ARRAY_H
 #define ARRAY_H
@@ -49,7 +49,7 @@ Array<T>::Array(const Array<T>&a){
 
 // 重载"="运算符，将独享rhs赋值给本对象，实现对象之间的整体赋值
 template<class T>
-Array<T>&Array<T>::operator=(const Array<const Array<T>&rhs>){
+Array<T>&Array<T>::operator=(const Array<T>&rhs){
 	if(&rhs!=this){
 		if(size!=rhs.size){
 			delete [] list;
@@ -71,7 +71,7 @@ T &Array<T>::operator[] (int n){
 
 template<class T>
 const T &Array<T>::operator[](int n) const{
-	assert(n>=0 && n<siz);
+	assert(n>=0 && n<size);
 	return list[n];
 }
 

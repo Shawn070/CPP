@@ -15,9 +15,16 @@ public:
     Node<T> * deleteAfter();                // 删除本结点的后继结点，并返回其地址
     Node<T> * nextNode();                   // 获取后继结点的地址
     const Node<T> * nextNode() const;       // 获取后继结点的地址
-}；
+};
 
 // 类的实现部分
+// 构造函数，初始化数据和指针成员
+template<class T>
+Node<T>::Node(const T& date, Node<T> * next /* =0*/): date(data), next(next){}
+
+// 返回后继结点的指针
+template<class T>
+Node<T>::Node(const T& data, Node<T> )
 
 
 #endif

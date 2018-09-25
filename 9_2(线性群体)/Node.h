@@ -21,7 +21,7 @@ public:
 // 类的实现部分
 // 构造函数，初始化数据和指针成员
 template<class T>
-Node<T>::Node(const T& date, Node<T> * next /* =0*/): date(data), next(next){}
+Node<T>::Node(const T& data, Node<T> * next /* =0*/): data(data), next(next){}
 
 // 返回后继结点的指针
 template<class T>

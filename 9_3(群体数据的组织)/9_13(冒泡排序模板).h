@@ -14,7 +14,7 @@ void mySwap(T &x, T &y){
 
 // 用起泡法对数组a的n个元素进行依次排序
 template<class T>
-void bubbleSort(T a[], T int n){
+void bubbleSort(T a[], int n){
     int i=n-1;                          // i是下一趟需参与排序交换的元素的最大下标
     while(i>0){         // 继续排序过程，直到最后一趟排序没有交换发生，或已达N-1趟
         int lastExchanngeIndex=0;       // 每一趟开始时，设置交换标志为0（未交换）

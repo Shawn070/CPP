@@ -120,6 +120,64 @@ cout<<'A';          // 输出一个字符，但此前设置的宽度和填充方
 
 作用是在写到一个流时进行错误处理。如表 11-3
 
-![](./img/)
+![](./img/表11-3_错误处理成员函数及其功能.png)
 
+### 2.4 二进制输出文件
+
+最初设计流的目的时用于文本，因此默认的输出模式是文本方式，不同操作系统，文本文件的分隔符不大一样。例如linux一个换行符（'\n'，10）作为分行隔符，windows下以一个换行符和一个回车符（'\r', 13）作为分行隔符。如要二进制模式输出到文件，需要在打开时在打开模式中设置 `ios_base::binary`。例如：
+``` c++
+#include<fstream>
+using namespace std;
+int array[2]={99, 10};
+int main(){
+    ofstream os("test.dat", ios_base::out|ios_base::binary);
+    os.write(reinterpret_cast<char *>(array), sizeof(array));
+    return 0;
+}
+```
+
+### 2.5 字符串输出流
+
+ostringstream 类有两个构造函数。</br>
+第一个函数有一个形参，表示流的打开模式，与文件输出流中的第二个参数功能相同，可取 表11-2 中的值，创建一个字符串i输出流：`ostringstream os;`</br>
+第二个构造函数接收两个形参。第一个形参是string型常对象，用来为这个字符串流的内容设置初始值，第二个形参表示打开模式，与第一种构造函数的形参具有相同的意义。
+
+ostringstream 类与 ofstream 类同为ostream 类的派生类，open 函数和 close 函数是 ostringstream类不具有。
+
+ostringstream类还有一个特有的函数 str，它返回一个string对象，表示用该输出流生成字符串的内容。
+
+ostringstream类的一个典型用法是将一个数值转化为字符串。参见 例11-6
+
+
+## 3. 输出流
+
+3个最重要的输入流类是 istream, ifstream, istringstream
+
+1. istream 类最适合用于顺序文本模式输入。
+2. ifstream 类支持磁盘文件输入。
+
+### 3.1 构造输入流对象
+
+如果仅使用 cin 对象，则不需要构造输入流对象。如果要使用文件流从文件中读取数据，就必须构造一个输入流对象。
+
+1. 使用默认构造函数建立对象，然后调用open
+   ``` c++
+   ifstream myFile;
+   myFile.open("filename"):
+   ```
+2. 在调用构造函数建立文件流对象时指定文件名和模式，在构造过程中打开该文件
+    ``` c++
+    ifstream myFile("filename");
+    ```
+
+### 3.2 使用提取运算符
+提取运算符（“>>”）是用于格式化文本输入的，在提取数据时，以空白符为分隔。如果要输入一段包含空白符的文本，选择使用非格式化输入成员函数 getline
+
+### 3.3 输出流操纵符
+
+定义在 ios_base 类中和 iomanip 头文件中的操纵符可以应用于输出流。但是只有少数几个操纵符对输入流对象具有实际影响，其中最重要的是进制操纵符 dec, oct, hex。
+
+### 3.4 输入流相关函数
+
+1. 输入流的 open 函数
 

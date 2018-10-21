@@ -7,16 +7,16 @@
 using namespace std;
 
 int main(){
-    int values[]={ 3, 7, 0, 5, 4 };
-    ofstream os("intergers", ios_base::out | ios_base::binary);
-    os.write(reinterpret_cast<char *>(values), sizeof(values));
+    int values[]={ 3, 7, 0, 5, 4 };     // 位置 0*sizeof(int), 1*sizeof(int), 2*sizeof(int), 3*sizeof(int)
+    ofstream os("integers", ios_base::out | ios_base::binary);
+    os.write(reinterpret_cast<char *>(&values), sizeof(values));
     os.close();
 
     ifstream is("integers", ios_base::in | ios_base::binary);
     if(is){
-        is.seekg(3*sizeof(int));
+        is.seekg(3*sizeof(int));    // 找到位置
         int v;
-        is.read(reinterpret_cast<char *>(&v), sizeof(int));
+        is.read(reinterpret_cast<char *>(&v), sizeof(int));     // 读取数据
         cout<<"The 4th integer in the file 'integers' is "<<v<<endl;
     }else{
         cout<<"ERROR: Cannot open file 'integers'."<<endl;

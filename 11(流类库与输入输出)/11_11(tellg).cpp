@@ -12,7 +12,7 @@ int main(){
             int v;
             file.read(reinterpret_cast<char *>(&v), sizeof(int));
             if(file && v==0)
-                cout<<"Position"<<here<<" is 0"<<endl;
+                cout<<"Position "<<here<<" is 0"<<endl;
         }
     }else{
         cout<<"ERROR: Cannot open file 'integers'. "<<endl;

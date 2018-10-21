@@ -206,3 +206,27 @@ istream 类具有成员函数 getline，允许从输入流中读取多个字符�
 保留一个指向文件中下一个将读取数据的位置的内部指针，可以用seekp 函数设置这个指针。
 
 tellg 成员函数返回当前文件读指针的位置，这个值是streampos 类型。
+
+### 3.5 字符串输入流 **istringstream**
+
+有两个构造函数，最常用的那个构造函数接收两个参数，分别表示要输入的string 对象和流的打开模式。打开模式默认值 ios_base::in
+``` c++
+// 创建一个字符串输出流：
+string str=...;
+istringstream is(str);
+```
+
+ifstream 类所具有的大部分功能，istringstream类都有。只有专用于文件操作得open 函数和close 函数是istringstream 类所不具有的。
+
+istringstream 类的一个典型用法是将一个字符串转换为数值，如例 11_12.cpp
+
+
+## 4. 输入输出流
+
+一个 iostream 对象可以是数据的源或目的。两个重要的I/O流类从 iostream 派生的，fstream 和 stringstream。这些都是继承了前面描述的 istream 和 ostream类。
+
+fstream 类支持磁盘文件输入和输出。如果需要在同一个程序中从一个特定的磁盘文件读并写到该磁盘文件，可以构造一个 fstream 对象。一个 fstream 对象是有两个逻辑子流的单个流，两个子流一个用于输入，另一个用于输出。
+
+stringstream 类支持面向字符串的输入和输出，可以用于对同一个字符串的内容交替读写，同样是由两个逻辑子流构成。
+
+

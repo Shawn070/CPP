@@ -51,4 +51,6 @@ virtual const char * what() const throw();
 ```
 ![](./img/图12-2_标准异常类的继承关系.png)
 
+表12-1 列出了各个具体异常类的含义及定义他们的头文件。runtime_error 和 logic_error 是一些具体的异常类的基类。logic_error 表示那些可以在程序中被预先检测到的异常；而runtime_errror 表示那些难以被预先检测的异常。
 
+![](./img/表12-1_C++标准库各种异常类所代表的异常.png)

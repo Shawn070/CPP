@@ -38,42 +38,47 @@ class Solution
   public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
-        ListNode *p1=l1, *p2=l2, *l3=NULL;
-        ListNode *pre = NULL, *p3 = l3;
-        int carried = 0;
+        // ListNode *p1=l1, *p2=l2, *l3=NULL;
+        // ListNode *pre = NULL, *p3 = l3;
+        // int carried = 0;
         
-        while(p1 || p2){
-            int a = p1 ? p1->val : 0;
-            int b = p2 ? p2->val : 0;
-            if(p1)
-                p1->val = (a + b + carried)%10;
-            else{
-                pre->next = new ListNode((a+b+carried)%10);
-                p1 = pre->next;
-            }
-            // p3 = new ListNode((a + b + carried)%10);
-            carried = (a+b+carried)/10;
-            pre = p1;
-            p1 = p1->next;
-            if(p2) p2 = p2->next;
-            
-        //     int a = 0, b=0;
-        //     if(p1){
-        //         a = p1->val;
-        //         p1 = p1->next;
+        // while(p1 || p2){
+        //     int a = p1 ? p1->val : 0;
+        //     int b = p2 ? p2->val : 0;
+        //     if(p1)
+        //         p1->val = (a + b + carried)%10;
+        //     else{
+        //         pre->next = new ListNode((a+b+carried)%10);
+        //         p1 = pre->next;
         //     }
-        //     if(p2){
-        //         b = p2->val;
-        //         p2 = p2->next;
-        //     }
-        //     p3->val = (a + b + carried)%10;
-        //     carried = (a + b + carried)/10;
-        //     p3->next = new ListNode(0);
+        //     // p3 = new ListNode((a + b + carried)%10);
+        //     carried = (a+b+carried)/10;
+        //     pre = p1;
+        //     p1 = p1->next;
+        //     if(p2) p2 = p2->next;
+        // }
+        // pre->next = carried ? new ListNode(1) : NULL;
+        // return l1;
 
+        ListNode *result = new ListNode(0);
+        ListNode *temp = result;
+        int sum = 0;
+        while(l1 || l2){
+            if(l1){
+                sum += l1->val;
+                l1 = l1->next;
+            }
+            if(l2){
+                sum += l2->val;
+                l2 = l2->next;
+            }
+            temp->next = new ListNode(sum%10);
+            sum /= 10;
+            temp = temp->next;
         }
-        // p3->next = carried ? new ListNode(1) : NULL;
-        // return l3;
-        pre->next = carried ? new ListNode(1) : NULL;
-        return l1;
+        if(sum){
+            temp->next = new ListNode(sum);
+        }
+        return result->next;
     }
 };

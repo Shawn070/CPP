@@ -42,8 +42,8 @@
 用2个变量分别指向两个数组，每次取较小的一个，然后将其
 指针后移动。但是这里有个问题，就是奇偶判断，如果是奇数
 ，中位数是num[mid]，但是如果是偶数，是(num[mid]+num[mid-1])/2。
-这里我的做法是把num[mid]看作(num[mid]+num[mid])/2。
-如果是偶数-1,奇数-0。
+这里我的做法是把num[mid]看作(num[mid]+num[mid - flags])/2。
+如果是偶数1,奇数0 -> flags。
 */
 
 class Solution {

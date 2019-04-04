@@ -1,17 +1,17 @@
 /*
- * @lc app=leetcode.cn id=12 lang=cpp
+ * @lc app=leetcode.cn id=13 lang=cpp
  *
- * [12] 整数转罗马数字
+ * [13] 罗马数字转整数
  *
- * https://leetcode-cn.com/problems/integer-to-roman/description/
+ * https://leetcode-cn.com/problems/roman-to-integer/description/
  *
  * algorithms
- * Medium (58.33%)
- * Total Accepted:    19.6K
- * Total Submissions: 33.7K
- * Testcase Example:  '3'
+ * Easy (57.29%)
+ * Total Accepted:    51.7K
+ * Total Submissions: 90.3K
+ * Testcase Example:  '"III"'
  *
- * 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
+ * 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
  * 
  * 字符          数值
  * I             1
@@ -34,51 +34,41 @@
  * C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
  * 
  * 
- * 给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。
+ * 给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。
  * 
  * 示例 1:
  * 
- * 输入: 3
- * 输出: "III"
+ * 输入: "III"
+ * 输出: 3
  * 
  * 示例 2:
  * 
- * 输入: 4
- * 输出: "IV"
+ * 输入: "IV"
+ * 输出: 4
  * 
  * 示例 3:
  * 
- * 输入: 9
- * 输出: "IX"
+ * 输入: "IX"
+ * 输出: 9
  * 
  * 示例 4:
  * 
- * 输入: 58
- * 输出: "LVIII"
- * 解释: L = 50, V = 5, III = 3.
+ * 输入: "LVIII"
+ * 输出: 58
+ * 解释: L = 50, V= 5, III = 3.
  * 
  * 
  * 示例 5:
  * 
- * 输入: 1994
- * 输出: "MCMXCIV"
+ * 输入: "MCMXCIV"
+ * 输出: 1994
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  * 
  */
 class Solution {
 public:
     int romanToInt(string s) {
-        int val[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        string romanVal[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-        int res=0;
-        while(s.length() !=  0)
-        for(int i=0; i<13; i++){
-            while(s.substr(0,1)==romanVal[i] || s.substr(0,2)==romanVal[i]&&s.length()>0){
-                s.substr(0,1)==romanVal[i] ? s = s.substr(1,s.length()) : s = s.substr(2,s.length());
-                res += val[i];
-            }
-        }
-        return res;
+        
     }
 };
 
